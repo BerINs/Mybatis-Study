@@ -12,4 +12,16 @@
     <select id="getUserByUsername" resultType="io.peaches.mybatis.pojo.User">
         select * from t_user where username = #{username};
     </select>
+
+    <select id="loginCheck" resultType="io.peaches.mybatis.pojo.User">
+        select * from t_user where username = #{arg1} and password = '${arg0}';
+    </select>
+
+    <select id="getUserByIdMap" resultType="map">
+        select * from t_user where id = #{id};
+    </select>
+
+    <select id="getAllUserMap" resultType="map">
+        select * from t_user;
+    </select>
 </mapper>
