@@ -13,9 +13,7 @@ public class SqlSessionUtils {
     public static SqlSession getSqlSession() {
         SqlSession sqlSession = null;
         try {
-            // 加载核心配置
-            InputStream inputStream = null;
-            inputStream = Resources.getResourceAsStream("mybatis-config.xml");
+            InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
             // 获取sqlSessionFactoryBuilder
             SqlSessionFactoryBuilder sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
             SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBuilder.build(inputStream);
