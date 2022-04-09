@@ -2,6 +2,7 @@ package io.peaches.mybatis.test;
 
 
 import io.peaches.mybatis.mapper.UserMapper;
+import io.peaches.mybatis.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -10,6 +11,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 public class MybatisTest {
 
@@ -27,10 +29,13 @@ public class MybatisTest {
 
 //        int result = mapper.insertUser();
 //        int result = mapper.updateUser();
-        int result = mapper.deleteUser();
-        // 事务提交
-//        sqlSession.commit();
+//        int result = mapper.deleteUser();
+//        User result = mapper.getUserById();
+        List<User> result = mapper.getAllUser();
 
-        System.out.println("result: " + result);
+
+//        System.out.println("result: " + result);
+        result.forEach(System.out::println);
+
     }
 }

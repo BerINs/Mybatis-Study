@@ -15,4 +15,12 @@
     <delete id="deleteUser">
         delete from t_user where  id = 3;
     </delete>
+
+    <select id="getUserById" resultType="io.peaches.mybatis.pojo.User">
+        select * from t_user where id = 1;
+    </select>
+
+    <select id="getAllUser" resultType="io.peaches.mybatis.pojo.User">
+        select  * from t_user;
+    </select>
 </mapper>
