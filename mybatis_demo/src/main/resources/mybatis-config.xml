@@ -23,5 +23,6 @@
     <!--加载映射文件-->
     <mappers>
         <mapper resource="mapper/userMapper.xml" />
+        <mapper resource="mapper/parameterMapper.xml" />
     </mappers>
 </configuration>
