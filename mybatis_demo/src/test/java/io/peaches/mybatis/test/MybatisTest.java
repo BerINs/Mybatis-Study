@@ -21,13 +21,15 @@ public class MybatisTest {
         SqlSessionFactoryBuilder sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
         SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBuilder.build(inputStream);
         // 获取sqlSession
-        SqlSession sqlSession = sqlSessionFactory.openSession();
+        SqlSession sqlSession = sqlSessionFactory.openSession(true);
         // 获取mapper接口对象
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
-        int result = mapper.insertUser();
+//        int result = mapper.insertUser();
+//        int result = mapper.updateUser();
+        int result = mapper.deleteUser();
         // 事务提交
-        sqlSession.commit();
+//        sqlSession.commit();
 
         System.out.println("result: " + result);
     }

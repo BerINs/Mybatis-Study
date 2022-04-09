@@ -7,4 +7,12 @@
     <insert id="insertUser">
         insert into t_user values(null, 'admin', 'admin', 18, '男', 'admin@qq.com');
     </insert>
+
+    <update id="updateUser">
+        update t_user set username = 'Jerry' where id = 1;
+    </update>
+
+    <delete id="deleteUser">
+        delete from t_user where  id = 3;
+    </delete>
 </mapper>
