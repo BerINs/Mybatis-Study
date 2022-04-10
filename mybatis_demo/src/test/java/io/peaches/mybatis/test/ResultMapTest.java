@@ -15,7 +15,7 @@ public class ResultMapTest {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession();
         EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
 
-        List<Emp> result = mapper.getAllEmp();
-        result.forEach(System.out::println);
+        Emp empAndDept = mapper.getEmpAndDeptOne(1);
+        System.out.println(empAndDept);
     }
 }

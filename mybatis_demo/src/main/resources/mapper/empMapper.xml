@@ -13,4 +13,43 @@
         select * from t_emp;
     </select>
 
+    <!--多对一查询
+    1、级联查询-->
+    <resultMap id="getEmpAndDeptMap" type="io.peaches.mybatis.pojo.Emp">
+        <id property="eid" column="eid" />
+        <result property="empName" column="emp_name" />
+        <result property="dept.did" column="did" />
+        <result property="dept.deptName" column="dept_name" />
+    </resultMap>
+
+    <!--2、association查询-->
+    <resultMap id="getEmpAndDeptAs" type="io.peaches.mybatis.pojo.Emp">
+        <id property="eid" column="eid" />
+        <result property="empName" column="emp_name" />
+        <association property="dept" >
+            <id property="did" column="did" />
+            <result property="deptName" column="dept_name" />
+        </association>
+    </resultMap>
+
+    <!--3、分步查询-->
+    <resultMap id="getEmpAndDeptByStepOne" type="io.peaches.mybatis.pojo.Emp">
+        <id property="eid" column="eid" />
+        <result property="empName" column="emp_name" />
+        <association property="dept"
+                     select="io.peaches.mybatis.mapper.DeptMapper.getEmpAndDeptTwo"
+                     column="did"/>
+    </resultMap>
+
+
+    <select id="getEmpAndDept" resultMap="getEmpAndDeptAs">
+        select *
+        from t_emp te left join t_dept td on te.did = td.did where te.eid = #{eid} ;
+    </select>
+
+    <select id="getEmpAndDeptOne" resultMap="getEmpAndDeptByStepOne">
+        select *
+        from t_emp where eid = #{eid};
+    </select>
+
 </mapper>

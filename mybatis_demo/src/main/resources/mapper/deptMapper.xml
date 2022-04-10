@@ -2,7 +2,11 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="io.peaches.mybatis.pojo.Dept">
+<mapper namespace="io.peaches.mybatis.mapper.DeptMapper">
+
+    <select id="getEmpAndDeptTwo" resultType="io.peaches.mybatis.pojo.Dept">
+        select did, dept_name deptName from t_dept where did = #{did};
+    </select>
 
 
 </mapper>
