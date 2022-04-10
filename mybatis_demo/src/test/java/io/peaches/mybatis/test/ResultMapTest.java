@@ -1,6 +1,8 @@
 package io.peaches.mybatis.test;
 
+import io.peaches.mybatis.mapper.DeptMapper;
 import io.peaches.mybatis.mapper.EmpMapper;
+import io.peaches.mybatis.pojo.Dept;
 import io.peaches.mybatis.pojo.Emp;
 import io.peaches.mybatis.utils.SqlSessionUtils;
 import org.apache.ibatis.session.SqlSession;
@@ -18,4 +20,6 @@ public class ResultMapTest {
         Emp empAndDept = mapper.getEmpAndDeptOne(1);
         System.out.println(empAndDept);
     }
+
+
 }
