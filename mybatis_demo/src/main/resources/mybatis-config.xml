@@ -6,6 +6,10 @@
 
     <properties resource="db.properties"/>
 
+    <!--<settings>-->
+    <!--    <setting name="mapUnderscoreToCamelCase" value="true"/>-->
+    <!--</settings>-->
+
 
     <environments default="development">
         <environment id="development">
@@ -24,5 +28,7 @@
     <mappers>
         <mapper resource="mapper/userMapper.xml" />
         <mapper resource="mapper/parameterMapper.xml" />
+        <mapper resource="mapper/empMapper.xml" />
+        <mapper resource="mapper/deptMapper.xml" />
     </mappers>
 </configuration>

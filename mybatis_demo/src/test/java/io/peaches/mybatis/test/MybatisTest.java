@@ -18,15 +18,18 @@ public class MybatisTest {
 
         SqlSession sqlSession = SqlSessionUtils.getSqlSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-//        int result = mapper.insertUser();
+        User user = new User(null, "小红", "admin", 18, "女", "xh@qq.com");
+       int result = mapper.insertUser(user);
 //        int result = mapper.updateUser();
 //        int result = mapper.deleteUser();
 //        User result = mapper.getUserById();
-        List<User> result = mapper.getAllUser();
+//         List<User> result = mapper.getAllUser();
 
 
-//        System.out.println("result: " + result);
-        result.forEach(System.out::println);
+
+
+       System.out.println(user);
+//         result.forEach(System.out::println);
 
     }
 

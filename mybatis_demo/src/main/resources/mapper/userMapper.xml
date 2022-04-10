@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="io.peaches.mybatis.mapper.UserMapper">
 
-    <insert id="insertUser">
-        insert into t_user values(null, 'admin', 'admin', 18, '男', 'admin@qq.com');
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user values(null, #{username}, #{password}, ${age}, #{age}, #{email});
     </insert>
 
     <update id="updateUser">
