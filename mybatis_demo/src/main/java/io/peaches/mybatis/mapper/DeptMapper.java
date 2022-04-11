@@ -15,5 +15,5 @@ public interface DeptMapper {
     /**
      * 根据部门查询职员
      */
-    // Dept getDeptAndEmp(@Param("did") Integer did);
+    Dept getDeptAndEmp(@Param("did") Integer did);
 }

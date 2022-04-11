@@ -9,21 +9,21 @@
     </select>
 
     <!--Collection查询-->
-    <!--<resultMap id="getDeptAndEmpCo" type="io.peaches.mybatis.pojo.Dept">-->
-    <!--    <id property="did" column="did" />-->
-    <!--    <result property="deptName" column="dept_name" />-->
+    <resultMap id="getDeptAndEmpCo" type="io.peaches.mybatis.pojo.Dept">
+        <id property="did" column="did" />
+        <result property="deptName" column="dept_name" />
 
-    <!--    <collection property="emps" ofType="Emp">-->
-    <!--        <id property="eid" column="eid" />-->
-    <!--        <result property="empName" column="emp_name" />-->
-    <!--        <result property="age" column="age" />-->
-    <!--        <result property="sex" column="sex" />-->
-    <!--        <result property="email" column="email" />-->
-    <!--    </collection>-->
-    <!--</resultMap>-->
-    <!--<select id="getDeptAndEmp" resultMap="getDeptAndEmpCo">-->
-    <!--    select * from t_dept left join t_emp te on t_dept.did = te.did where t_dept.did = #{did};-->
-    <!--</select>-->
+        <collection property="emps" ofType="io.peaches.mybatis.pojo.Emp">
+            <id property="eid" column="eid" />
+            <result property="empName" column="emp_name" />
+            <result property="age" column="age" />
+            <result property="sex" column="sex" />
+            <result property="email" column="email" />
+        </collection>
+    </resultMap>
+    <select id="getDeptAndEmp" resultMap="getDeptAndEmpCo">
+        select * from t_dept left join t_emp te on t_dept.did = te.did where t_dept.did = #{did};
+    </select>
 
 
 </mapper>

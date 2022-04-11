@@ -26,7 +26,7 @@
     <resultMap id="getEmpAndDeptAs" type="io.peaches.mybatis.pojo.Emp">
         <id property="eid" column="eid" />
         <result property="empName" column="emp_name" />
-        <association property="dept" >
+        <association property="dept" javaType="io.peaches.mybatis.pojo.Dept">
             <id property="did" column="did" />
             <result property="deptName" column="dept_name" />
         </association>
